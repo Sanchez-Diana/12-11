@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <style>
+    body {
+        font-family: "Roboto Mono", monospace;
+    }
+    
+    .header {
+        height: 22px;
+    }
+    
+    .texto {
+        padding-inline: 2em;
+    }
+    
+    .contenedor {
+        width: 80em;
+    }
+    
+    .a {
+        margin-inline: 4em;
+    }
+    
+    .font {
+        font-size: 20px;
+        
+    }
+    
+    .navbar {
+        padding-top: 0px;
+    }
+    .no-underline{
+      text-decoration: none;
+    }
+    .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1;
+            right: 0; 
+            top: 0;
+            width: 300px; 
+            height: 100%; 
+            background-color: rgba(255, 255, 255, 1); 
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+    .footer {
+        background-color: #000000;
+        padding: 5px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+        color: #ddd;
+        padding-bottom: 1px;
+    }
+    
+    .payment-methods{
+        height: 85px; 
+    }
+    p{
+      margin-bottom: 10px;
+    }
+    .tarjeta {
+        width: 8vh;
+    }
+    
+    @media screen and (max-width: 1300px) {
+        .contenedor {
+            width: 38em;
+            margin-top: 10px;
+            margin-left: 35px;
+            margin-bottom: 10px;
+        }
+    
+        .header {
+            height: 20px;
+            align-items: center;
+        }
+    
+        .navbar {
+            padding-top: 8px;
+        }
+    
+        .texto {
+            margin: 0px;
+            padding-left: 80px;
+        }
+    
+        .li {
+            margin: 0px;
+        }
+    
+        .a {
+            margin-inline: 15px;
+        }
+    
+        .font {
+            font-size: 15px;
+        }
+    
+        .footer {
+            padding: 5px;
+        }
+    }
+    
+      </style>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="header col bg-warning d-flex">
+          <div id="contenedorNav"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col bg-black">
+          <nav class="navbar navbar-expand-lg d-flex flex-column">
+            <div class="container-fluid ps-0">
+              <a class="no-underline" href="index.html">
+                <h3 class="texto navbar-brand text-light fs-3">Sport Zone</h3>
+              </a>
+              <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-flex flex-row"></span>
+              </button>
+              <div class="contenedor">
+                <form class="d-flex " role="search">
+                    <input class="form-control border-2 border-dark-subtle me-3" id="searchInput" type="search" placeholder="Buscar..." aria-label="Search">
+                </form>
+            </div>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-center">
+                  <li class="nav-item d-flex flex-row">
+                    <a class="nav-link mx-5 text-white" href="./login.html"><i class="bi bi-person text-center fs-3 d-flex flex-column"></i>Cuenta</a>
+                    <a class="nav-link text-white"href="#"><i class="bi bi-cart4 text-center fs-3 d-flex flex-column model" id="myBtn"></i>Carrito</a>
+                  </li>
+                </ul>
+                <div id="myModal" class="modal">
+                  <div class="modal-content" style="border: 0px;">
+                      <span class="close"><button class="bg-white" style="border: 0px;"><i class="bi bi-x-circle fs-4"></i></button></span>
+                      <h2>Tu Carrito</h2>
+                      <ul id="carrito"></ul>
+                      <p id="total">Total: $0</p>
+                  </div>
+              </div>
+
+              <script>
+                
+                  var modal = document.getElementById("myModal");
+
+                  var btn = document.getElementById("myBtn");
+
+
+                  var span = document.getElementsByClassName("close")[0];
+                  btn.onclick = function() {
+                      modal.style.display = "block";
+                  }
+
+                  span.onclick = function() {
+                      modal.style.display = "none";
+                  }
+
+                  window.onclick = function(event) {
+                      if (event.target == modal) {
+                          modal.style.display = "none";
+                      }
+                  }
+              </script>
+
+              </div>
+            </div>
+            <hr class="border border-1 border-white my-0" style="width: 100%;">
+            <div>
+              <ul class="navbar-nav">
+                <li class="font nav-item d-flex flex-row">
+                  <a class="a nav-link text-white" href="futbol.html">Futbol</a>
+                  <a class="a nav-link text-white" href="beisbol.html">Beisbol</a>
+                  <a class="a nav-link text-white" href="tenis.html">Tenis</a>
+                  <a class="a nav-link text-white" href="golf.html">Golf</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="container mt-4">
+              <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center">
+                  <h1 class="text-center mb-4">Productos de Futbol</h1>
+                  <a href="./php/index2.php"><button class="btn btn-success mb-3">Comprar Producto</button></a>
+                  <div id="productos-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-0 px-0 ">
+        <div class="col px-0">
+            <div id="contenedorFoo"></div>
+        </div>
+    </div>
+    </div>
+    
+    <script src="./car.js"></script>
+    <script src="./futbol.js"></script>
+    <script src="./busqueda.js"></script>
+    <script src="./index.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
