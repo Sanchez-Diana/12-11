@@ -2,7 +2,7 @@ function comprarProductos() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     if (carrito.length === 0) {
-        alert("El carrito está vacío.");
+        alert("El carrito está vacío..");
         return;
     }
 
