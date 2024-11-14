@@ -16,14 +16,18 @@ fetch('./productos.json')
                     <p class="card-text flex-grow-1">${producto.descripcion}</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
                         <strong class="fs-4 mx-auto">$${producto.precio}</strong>
-                                               <div>
+                        <div>
                         <button onclick="agregarProducto()" class="btn btn-outline-primary p-2"><i class="bi bi-cart4"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         `;
-
+    
+        const boton = productoDiv.querySelector('button');
+        boton.onclick = function() {
+            agregarProducto(producto);
+        };
             contenedor.appendChild(productoDiv);
         });
     })

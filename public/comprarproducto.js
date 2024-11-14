@@ -5,7 +5,11 @@ function comprarProductos() {
         alert("El carrito está vacío..");
         return;
     }
-
+    let arr = []
+    carrito.forEach(producto => {
+        arr.push(producto.nombre);
+  });
+  console.log(arr)
     const productosParaEnviar = carrito.map(producto => ({
         nombre: producto.nombre,
         descripcion: producto.descripcion,
@@ -30,7 +34,7 @@ function comprarProductos() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert("Compra realizada exitosamente.");
+            alert("Compra realizada exitosamente.\nCompraste:"+arr);
             localStorage.removeItem("carrito");  
             actualizarModalCarrito(); 
         } else {

@@ -123,55 +123,38 @@
         <div class="col bg-black">
           <nav class="navbar navbar-expand-lg d-flex flex-column">
             <div class="container-fluid ps-0">
-              <a class="no-underline" href="index.html">
-                <h3 class="texto navbar-brand text-light fs-3">Sport Zone</h3>
-              </a>
+              <h3 class="texto navbar-brand text-light fs-3">Sport Zone</h3>
               <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon d-flex flex-row"></span>
+                  <span class="navbar-toggler-icon d-flex flex-row"></span>
               </button>
               <div class="contenedor">
-                <form class="d-flex " role="search">
-                    <input class="form-control border-2 border-dark-subtle me-3" id="searchInput" type="search" placeholder="Buscar..." aria-label="Search">
-                </form>
-            </div>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-center">
-                  <li class="nav-item d-flex flex-row">
-                    <a class="nav-link mx-5 text-white" href="./login.html"><i class="bi bi-person text-center fs-3 d-flex flex-column"></i>Cuenta</a>
-                    <a class="nav-link text-white" href="#"><i class="bi bi-cart4 text-center fs-3 d-flex flex-column model" id="myBtn"></i>Carrito</a>
-                  </li>
-                </ul>
-                <div id="myModal" class="modal">
-                  <div class="modal-content" style="border: 0px;">
-                      <span class="close"><button class="bg-white" style="border: 0px;"><i class="bi bi-x-circle fs-4"></i></button></span>
-                      <h2>Tu Carrito</h2>
-                      <ul id="carrito"></ul>
-                      <p id="total">Total: $0</p>
-                  </div>
+                  <form class="d-flex " role="search">
+                      <input class="form-control border-2 border-dark-subtle me-3" id="searchInput" type="search" placeholder="Buscar..." aria-label="Search">
+                  </form>
               </div>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row justify-content-center">
+                      <li class="nav-item d-flex flex-row">
 
-              <script>
-                
-                  var modal = document.getElementById("myModal");
+                          <a class="nav-link text-white" href="./login.html"><i class="bi bi-person text-center fs-3 d-flex flex-column"></i>Cuenta</a>
+                          <a class="nav-link text-white" href="#"><i class="bi bi-cart4 text-center fs-3 d-flex flex-column model" id="myBtn"></i>Carrito</a>
+                      </li>
+                  </ul>
+                <div id="modal" class="modal" style="display:none;">
+                      <div class="modal-content">
+                          <span class="close">&times;</span>
+                          <div id="modalCarrito">
+                              <ul id="carrito"></ul>
+                              <div id="total"></div>
+                          </div>
+                      </div>
+                      <button onclick="comprarProductos()" class="btn btn-success mb-3" style="margin-left: 19%;">Comprar Producto</button>
+                      <button onclick="borrarProductos()" class="btn btn-outline-primary p-2">Borrar</button>
 
-                  var btn = document.getElementById("myBtn");
+                  </div>
 
-
-                  var span = document.getElementsByClassName("close")[0];
-                  btn.onclick = function() {
-                      modal.style.display = "block";
-                  }
-
-                  span.onclick = function() {
-                      modal.style.display = "none";
-                  }
-
-                  window.onclick = function(event) {
-                      if (event.target == modal) {
-                          modal.style.display = "none";
-                      }
-                  }
-              </script>
+              </div>
+          </div>
 
               </div>
             </div>
@@ -208,7 +191,10 @@
         </div>
     </div>
     </div>
-    <script src="./car.js"></script>
+    <script src="./comprarproducto.js"></script>
+    <script src="./modal.js"></script>
+    <script src="./contenido.js"></script>
+    <script src="./productos.js"></script>
     <script src="./tenis.js"></script>
     <script src="./busqueda.js"></script>
     <script src="./index.js" type="module"></script>

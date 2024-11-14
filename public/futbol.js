@@ -24,6 +24,10 @@ fetch('./productos.json')
             </div>
         `; 
             
+        const boton = productoDiv.querySelector('button');
+        boton.onclick = function() {
+            agregarProducto(producto);
+        };
 
             contenedor.appendChild(productoDiv);
         });
